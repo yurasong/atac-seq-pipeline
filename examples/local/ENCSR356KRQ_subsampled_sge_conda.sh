@@ -37,7 +37,7 @@
 #$ -pe shm 2
 
 # load java module if it exists
-module load java || true
+module load Java || true
 
 # activate pipeline's Conda environment if Conda env exists
 source activate encode-atac-seq-pipeline
