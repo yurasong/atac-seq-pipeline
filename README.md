@@ -1,5 +1,7 @@
 # ENCODE ATAC-seq pipeline
 
+This is my personal version of the ENCODE pipeline.
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.156534.svg)](https://doi.org/10.5281/zenodo.156534)
 
 ## Introduction
