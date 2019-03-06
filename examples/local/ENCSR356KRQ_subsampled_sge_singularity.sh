@@ -37,7 +37,7 @@
 #$ -pe shm 2
 
 # load java module if it exists
-module load java || true
+module load Java || true
 
 # use input JSON for a small test sample
 #  you make an input JSON for your own sample
