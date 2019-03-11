@@ -39,7 +39,7 @@ source activate encode-atac-seq-pipeline
 #  (examples/template_se.json, examples/template_pe.json)
 #  do not use an input JSON file for a test sample (ENCSR356KRQ)
 #  it's a sample with multimapping reads
-INPUT=examples/local/ENCSR356KRQ_subsampled.json
+INPUT=examples/hydra/ENCSR356KRQ_subsampled.json
 
 # If this pipeline fails, then use this metadata JSON file to resume a failed pipeline from where it left
 # See details in /utils/resumer/README.md
