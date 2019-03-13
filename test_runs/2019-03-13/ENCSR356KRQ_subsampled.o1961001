@@ -1,0 +1,747 @@
+submit directory: /sulb1/mmalfait/atac-seq-pipeline
+jobid: 1961001
+hostname: nic425
+Wed Mar 13 17:14:39 CET 2019
+--- Start Job ---
+[2019-03-13 17:14:44,22] [info] Running with database db.url = jdbc:hsqldb:mem:a9039b1a-d391-4e2b-921f-bb69401a720c;shutdown=false;hsqldb.tx=mvcc
+[2019-03-13 17:14:51,07] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+[2019-03-13 17:14:51,08] [info] [RenameWorkflowOptionsInMetadata] 100%
+[2019-03-13 17:14:51,16] [info] Running with database db.url = jdbc:hsqldb:mem:d534aab1-c655-4d73-8c4d-423c23bdb5fc;shutdown=false;hsqldb.tx=mvcc
+[2019-03-13 17:14:51,38] [[38;5;220mwarn[0m] This actor factory is deprecated. Please use cromwell.backend.google.pipelines.v1alpha2.PipelinesApiLifecycleActorFactory for PAPI v1 or cromwell.backend.google.pipelines.v2alpha1.PipelinesApiLifecycleActorFactory for PAPI v2
+[2019-03-13 17:14:51,39] [[38;5;220mwarn[0m] Couldn't find a suitable DSN, defaulting to a Noop one.
+[2019-03-13 17:14:51,40] [info] Using noop to send events.
+[2019-03-13 17:14:51,64] [info] Slf4jLogger started
+[2019-03-13 17:14:51,82] [info] Workflow heartbeat configuration:
+{
+  "cromwellId" : "cromid-e2bdce9",
+  "heartbeatInterval" : "2 minutes",
+  "ttl" : "10 minutes",
+  "writeBatchSize" : 10000,
+  "writeThreshold" : 10000
+}
+[2019-03-13 17:14:51,91] [info] Metadata summary refreshing every 2 seconds.
+[2019-03-13 17:14:51,95] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+[2019-03-13 17:14:51,95] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+[2019-03-13 17:14:51,95] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+[2019-03-13 17:14:52,59] [info] JobExecutionTokenDispenser - Distribution rate: 50 per 1 seconds.
+[2019-03-13 17:14:52,63] [info] SingleWorkflowRunnerActor: Version 34
+[2019-03-13 17:14:52,64] [info] SingleWorkflowRunnerActor: Submitting workflow
+[2019-03-13 17:14:52,67] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-13 17:14:52,67] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-13 17:14:52,68] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-13 17:14:52,68] [info] PAPIQueryManager Running with 3 workers
+[2019-03-13 17:14:52,72] [info] Unspecified type (Unspecified version) workflow 9592d1b4-be39-422d-a398-b644159e05a3 submitted
+[2019-03-13 17:14:52,78] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2m9592d1b4-be39-422d-a398-b644159e05a3[0m
+[2019-03-13 17:14:52,79] [info] 1 new workflows fetched
+[2019-03-13 17:14:52,79] [info] WorkflowManagerActor Starting workflow [38;5;2m9592d1b4-be39-422d-a398-b644159e05a3[0m
+[2019-03-13 17:14:52,79] [[38;5;220mwarn[0m] SingleWorkflowRunnerActor: received unexpected message: Done in state RunningSwraData
+[2019-03-13 17:14:52,79] [info] WorkflowManagerActor Successfully started WorkflowActor-9592d1b4-be39-422d-a398-b644159e05a3
+[2019-03-13 17:14:52,79] [info] Retrieved 1 workflows from the WorkflowStoreActor
+[2019-03-13 17:14:52,81] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+[2019-03-13 17:14:52,88] [info] MaterializeWorkflowDescriptorActor [[38;5;2m9592d1b4[0m]: Parsing workflow as WDL draft-2
+[2019-03-13 17:15:09,27] [info] MaterializeWorkflowDescriptorActor [[38;5;2m9592d1b4[0m]: Call-to-Backend assignments: atac.overlap -> Local, atac.pool_ta -> Local, atac.reproducibility_overlap -> Local, atac.macs2_ppr1 -> Local, atac.read_genome_tsv -> Local, atac.macs2_pooled -> Local, atac.pool_ta_pr1 -> Local, atac.overlap_ppr -> Local, atac.filter -> Local, atac.bowtie2 -> Local, atac.pool_ta_pr2 -> Local, atac.idr -> Local, atac.bam2ta -> Local, atac.idr_ppr -> Local, atac.ataqc -> Local, atac.trim_adapter -> Local, atac.spr -> Local, atac.reproducibility_idr -> Local, atac.macs2_ppr2 -> Local, atac.idr_pr -> Local, atac.xcor -> Local, atac.macs2_pr1 -> Local, atac.macs2 -> Local, atac.overlap_pr -> Local, atac.macs2_pr2 -> Local, atac.qc_report -> Local
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [preemptible, disks, cpu, time, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,33] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:09,34] [[38;5;220mwarn[0m] Local [[38;5;2m9592d1b4[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-13 17:15:11,56] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.read_genome_tsv
+[2019-03-13 17:15:11,57] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: '!align_only && !true_rep_only && enable_idr'. Running conditional section
+[2019-03-13 17:15:11,57] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'enable_xcor && length(xcor_scores) < 1'. Running conditional section
+[2019-03-13 17:15:11,57] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: '!align_only && !true_rep_only'. Running conditional section
+[2019-03-13 17:15:11,57] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: '!true_rep_only'. Running conditional section
+[2019-03-13 17:15:11,57] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'enable_idr'. Running conditional section
+[2019-03-13 17:15:11,66] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:15:11,83] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: [38;5;5mcat /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-read_genome_tsv/inputs/-1316539498/hg38_local.tsv > 'tmp.tsv'[0m
+[2019-03-13 17:15:11,86] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-read_genome_tsv/execution/script
+[2019-03-13 17:15:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: job id: 9550
+[2019-03-13 17:15:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:15:12,74] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.read_genome_tsv:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:15:17,70] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.trim_adapter (2 shards)
+[2019-03-13 17:15:18,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:15:18,62] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:15:18,72] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: [38;5;5mpython $(which encode_trim_adapter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-0/execution/write_tsv_6478e30e06fe3c08ee4051f90da13e4b.tmp \
+	--adapters /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-0/execution/write_tsv_d41d8cd98f00b204e9800998ecf8427e.tmp \
+	--paired-end \
+	--auto-detect-adapter \
+	--min-trim-len 5 \
+	--err-rate 0.1 \
+	--nth 2[0m
+[2019-03-13 17:15:18,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-0/execution/script
+[2019-03-13 17:15:18,74] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: [38;5;5mpython $(which encode_trim_adapter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-1/execution/write_tsv_d74fbbf1b126fb32820df0375773b94d.tmp \
+	--adapters /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-1/execution/write_tsv_d41d8cd98f00b204e9800998ecf8427e.tmp \
+	--paired-end \
+	--auto-detect-adapter \
+	--min-trim-len 5 \
+	--err-rate 0.1 \
+	--nth 2[0m
+[2019-03-13 17:15:18,74] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-trim_adapter/shard-1/execution/script
+[2019-03-13 17:15:22,07] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: job id: 9691
+[2019-03-13 17:15:22,09] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: job id: 9683
+[2019-03-13 17:15:22,11] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:15:22,11] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:15:50,82] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:15:52,38] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.bowtie2
+[2019-03-13 17:15:52,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: Unrecognized runtime attribute keys: preemptible, disks, cpu, time, memory
+[2019-03-13 17:15:52,72] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: [38;5;5mpython $(which encode_bowtie2.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-0/inputs/671679789/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta.tar \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-0/inputs/1981045255/merge_fastqs_R1_ENCFF341MYG.subsampled.400.trim.merged.fastq.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-0/inputs/1981045255/merge_fastqs_R2_ENCFF248EJF.subsampled.400.trim.merged.fastq.gz \
+	--paired-end \
+	--multimapping 4 \
+	 \
+	--nth 1[0m
+[2019-03-13 17:15:52,72] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-0/execution/script
+[2019-03-13 17:15:53,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.trim_adapter:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:15:54,42] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.bowtie2
+[2019-03-13 17:15:54,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: Unrecognized runtime attribute keys: preemptible, disks, cpu, time, memory
+[2019-03-13 17:15:54,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: [38;5;5mpython $(which encode_bowtie2.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-1/inputs/671679789/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta.tar \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-1/inputs/1973285896/merge_fastqs_R1_ENCFF641SFZ.subsampled.400.trim.merged.fastq.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-1/inputs/1973285896/merge_fastqs_R2_ENCFF031ARQ.subsampled.400.trim.merged.fastq.gz \
+	--paired-end \
+	--multimapping 4 \
+	 \
+	--nth 1[0m
+[2019-03-13 17:15:54,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bowtie2/shard-1/execution/script
+[2019-03-13 17:15:57,00] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: job id: 10760
+[2019-03-13 17:15:57,00] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: job id: 10800
+[2019-03-13 17:15:57,00] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:15:57,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:24:06,82] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:25:04,69] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bowtie2:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:25:10,32] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.filter (2 shards)
+[2019-03-13 17:25:10,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:25:10,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:25:10,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: [38;5;5m
+touch null
+python $(which encode_filter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-filter/shard-1/inputs/-110569917/ENCFF641SFZ.subsampled.400.trim.merged.bam \
+	--paired-end \
+	--multimapping 4 \
+	--dup-marker picard \
+	--mapq-thresh 30 \
+	 \
+	--mito-chr-name chrM \
+	--nth 1[0m
+[2019-03-13 17:25:10,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: [38;5;5m
+touch null
+python $(which encode_filter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-filter/shard-0/inputs/-102810558/ENCFF341MYG.subsampled.400.trim.merged.bam \
+	--paired-end \
+	--multimapping 4 \
+	--dup-marker picard \
+	--mapq-thresh 30 \
+	 \
+	--mito-chr-name chrM \
+	--nth 1[0m
+[2019-03-13 17:25:10,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-filter/shard-1/execution/script
+[2019-03-13 17:25:10,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-filter/shard-0/execution/script
+[2019-03-13 17:25:12,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: job id: 27367
+[2019-03-13 17:25:12,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: job id: 27365
+[2019-03-13 17:25:12,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:25:12,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:26:20,46] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:26:39,26] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.filter:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:26:45,18] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.bam2ta (2 shards)
+[2019-03-13 17:26:45,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:26:45,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:26:45,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: [38;5;5mpython $(which encode_bam2ta.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bam2ta/shard-1/inputs/309494313/ENCFF641SFZ.subsampled.400.trim.merged.nodup.bam \
+	--paired-end \
+	 \
+	--regex-grep-v-ta 'chrM' \
+	--mito-chr-name chrM \
+	--subsample 0 \
+	--nth 2[0m
+[2019-03-13 17:26:45,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: [38;5;5mpython $(which encode_bam2ta.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bam2ta/shard-0/inputs/317253672/ENCFF341MYG.subsampled.400.trim.merged.nodup.bam \
+	--paired-end \
+	 \
+	--regex-grep-v-ta 'chrM' \
+	--mito-chr-name chrM \
+	--subsample 0 \
+	--nth 2[0m
+[2019-03-13 17:26:45,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bam2ta/shard-0/execution/script
+[2019-03-13 17:26:45,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-bam2ta/shard-1/execution/script
+[2019-03-13 17:26:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: job id: 30479
+[2019-03-13 17:26:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: job id: 30478
+[2019-03-13 17:26:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:26:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:26:55,35] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:26:59,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.bam2ta:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:27:04,56] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'length(tas__) > 1'. Running conditional section
+[2019-03-13 17:27:04,56] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: '!true_rep_only && length(tas__) > 1'. Running conditional section
+[2019-03-13 17:27:06,65] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2 (2 shards), atac.xcor (2 shards), atac.spr (2 shards), atac.pool_ta
+[2019-03-13 17:27:07,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:27:07,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:27:07,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:0:1]: [38;5;5mpython $(which encode_spr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-spr/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--paired-end[0m
+[2019-03-13 17:27:07,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: [38;5;5m
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	--make-signal \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-0/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:27:07,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-spr/shard-0/execution/script
+[2019-03-13 17:27:07,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-0/execution/script
+[2019-03-13 17:27:11,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:0:1]: job id: 30708
+[2019-03-13 17:27:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: job id: 30715
+[2019-03-13 17:27:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:0:1]: Status change from - to Done
+[2019-03-13 17:27:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:27:12,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:27:12,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta:NA:1]: [38;5;5mpython $(which encode_pool_ta.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz[0m
+[2019-03-13 17:27:12,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta/execution/script
+[2019-03-13 17:27:13,79] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2_pr2, atac.macs2_pr1
+[2019-03-13 17:27:16,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta:NA:1]: job id: 31197
+[2019-03-13 17:27:16,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta:NA:1]: Status change from - to Done
+[2019-03-13 17:27:17,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:27:17,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: [38;5;5mpython $(which encode_xcor.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-xcor/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--paired-end \
+	--mito-chr-name chrM \
+	--subsample 25000000 \
+	--speak=0 \
+	--nth 2[0m
+[2019-03-13 17:27:17,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-xcor/shard-1/execution/script
+[2019-03-13 17:27:18,88] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2_pooled
+[2019-03-13 17:27:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: job id: 31569
+[2019-03-13 17:27:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:27:38,17] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:27:38,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:27:38,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: [38;5;5m
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	--make-signal \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-1/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:27:38,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2/shard-1/execution/script
+[2019-03-13 17:27:41,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: job id: 32414
+[2019-03-13 17:27:41,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:29:35,56] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:29:35,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:29:35,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: [38;5;5mpython $(which encode_xcor.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-xcor/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--paired-end \
+	--mito-chr-name chrM \
+	--subsample 25000000 \
+	--speak=0 \
+	--nth 2[0m
+[2019-03-13 17:29:35,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-xcor/shard-0/execution/script
+[2019-03-13 17:29:36,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: job id: 35651
+[2019-03-13 17:29:36,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:29:50,23] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.xcor:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:29:50,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:29:50,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: [38;5;5mpython $(which encode_spr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-spr/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--paired-end[0m
+[2019-03-13 17:29:50,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-spr/shard-1/execution/script
+[2019-03-13 17:29:51,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: job id: 36347
+[2019-03-13 17:29:51,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:29:52,85] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.spr:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:29:53,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:29:53,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-0/inputs/468524575/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-0/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:29:53,64] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-0/execution/script
+[2019-03-13 17:29:53,90] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2_pr2, atac.macs2_pr1
+[2019-03-13 17:29:55,94] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.pool_ta_pr1, atac.pool_ta_pr2
+[2019-03-13 17:29:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: job id: 36406
+[2019-03-13 17:29:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:30:16,09] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:30:16,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:30:16,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-0/inputs/-1862821418/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-0/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:30:16,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-0/execution/script
+[2019-03-13 17:30:16,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: job id: 37223
+[2019-03-13 17:30:17,06] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:30:19,40] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'length(peaks_) > 0 && enable_idr'. Running conditional section
+[2019-03-13 17:30:19,40] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'length(peaks_) > 0'. Running conditional section
+[2019-03-13 17:33:33,90] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:33:34,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:33:34,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: [38;5;5m
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pooled/inputs/-83161451/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pooled/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	--make-signal \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pooled/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:33:34,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pooled/execution/script
+[2019-03-13 17:33:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: job id: 43240
+[2019-03-13 17:33:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:33:43,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:33:43,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:33:43,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-1/inputs/460765216/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr2.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-1/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:33:43,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr2/shard-1/execution/script
+[2019-03-13 17:33:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: job id: 43524
+[2019-03-13 17:33:46,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:37:02,05] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr2:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:37:02,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:37:02,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-1/inputs/-1870580777/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr1.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-1/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:37:02,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_pr1/shard-1/execution/script
+[2019-03-13 17:37:06,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: job id: 49777
+[2019-03-13 17:37:06,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:38:01,00] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pooled:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:38:01,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:38:01,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: [38;5;5mpython $(which encode_pool_ta.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr1/inputs/-1862821418/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.tagAlign.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr1/inputs/-1870580777/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr1.tagAlign.gz[0m
+[2019-03-13 17:38:01,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr1/execution/script
+[2019-03-13 17:38:01,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: job id: 51635
+[2019-03-13 17:38:01,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:38:03,33] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr1:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:38:03,34] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.overlap, atac.idr
+[2019-03-13 17:38:03,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr2:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:38:03,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr2:NA:1]: [38;5;5mpython $(which encode_pool_ta.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr2/inputs/468524575/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.tagAlign.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr2/inputs/460765216/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr2.tagAlign.gz[0m
+[2019-03-13 17:38:03,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr2:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-pool_ta_pr2/execution/script
+[2019-03-13 17:38:04,36] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2_ppr1
+[2019-03-13 17:38:06,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr2:NA:1]: job id: 51664
+[2019-03-13 17:38:06,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.pool_ta_pr2:NA:1]: Status change from - to Done
+[2019-03-13 17:38:07,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:38:07,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: [38;5;5m
+touch null 
+python $(which encode_naive_overlap.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/1154861631/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/1147102272/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/-1954206107/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.pval0.01.300K.narrowPeak.gz \
+	--prefix rep1-rep2 \
+	--peak-type narrowPeak \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/884914813/hg38.blacklist.bed.gz \
+	--nonamecheck \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/inputs/-83161451/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.tagAlign.gz[0m
+[2019-03-13 17:38:07,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap/shard-0/execution/script
+[2019-03-13 17:38:08,44] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.macs2_ppr2
+[2019-03-13 17:38:11,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: job id: 51699
+[2019-03-13 17:38:11,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:38:16,86] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:38:17,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:38:17,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: [38;5;5m
+touch null 
+python $(which encode_idr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/1154861631/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/1147102272/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/-1954206107/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.pval0.01.300K.narrowPeak.gz \
+	--prefix rep1-rep2 \
+	--idr-thresh 0.05 \
+	--peak-type narrowPeak \
+	--idr-rank p.value \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/884914813/hg38.blacklist.bed.gz \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/inputs/-83161451/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.tagAlign.gz[0m
+[2019-03-13 17:38:17,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr/shard-0/execution/script
+[2019-03-13 17:38:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: job id: 51975
+[2019-03-13 17:38:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:39:09,57] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:39:09,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:39:09,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr1/inputs/-425775419/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pooled.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr1/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr1/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:39:09,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr1/execution/script
+[2019-03-13 17:39:11,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: job id: 53762
+[2019-03-13 17:39:11,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:40:35,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_pr1:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:40:35,62] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:40:35,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: [38;5;5mtouch null.pval.signal.bigwig null.fc.signal.bigwig
+touch null 
+python $(which encode_macs2_atac.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr2/inputs/-433534778/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pooled.tagAlign.gz \
+	--gensz hs \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr2/inputs/884914813/hg38.chrom.sizes \
+	--cap-num-peak 300000 \
+	--pval-thresh 0.01 \
+	--smooth-win 73 \
+	 \
+	 \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr2/inputs/884914813/hg38.blacklist.bed.gz[0m
+[2019-03-13 17:40:35,64] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-macs2_ppr2/execution/script
+[2019-03-13 17:40:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: job id: 56174
+[2019-03-13 17:40:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:40:40,36] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'enable_idr && length(peaks_pr1_) > 1'. Running conditional section
+[2019-03-13 17:40:40,36] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Condition met: 'length(peaks_pr1_) > 1'. Running conditional section
+[2019-03-13 17:40:42,41] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.overlap_pr (2 shards), atac.idr_pr (2 shards)
+[2019-03-13 17:40:59,47] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr1:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:40:59,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:40:59,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: [38;5;5m
+touch null 
+python $(which encode_idr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/1856742768/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/-1807765903/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/1147102272/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz \
+	--prefix rep2-pr \
+	--idr-thresh 0.05 \
+	--peak-type narrowPeak \
+	--idr-rank p.value \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/884914813/hg38.blacklist.bed.gz \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz[0m
+[2019-03-13 17:40:59,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-1/execution/script
+[2019-03-13 17:41:01,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: job id: 57181
+[2019-03-13 17:41:01,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:41:21,67] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:41:22,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:41:22,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: [38;5;5m
+touch null 
+python $(which encode_naive_overlap.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/1856742768/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/-1807765903/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/1147102272/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz \
+	--prefix rep2-pr \
+	--peak-type narrowPeak \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/884914813/hg38.blacklist.bed.gz \
+	--nonamecheck \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz[0m
+[2019-03-13 17:41:22,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-1/execution/script
+[2019-03-13 17:41:26,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: job id: 57925
+[2019-03-13 17:41:27,00] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:41:28,32] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:41:28,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:41:28,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: [38;5;5m
+touch null 
+python $(which encode_naive_overlap.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/1864502127/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/-1800006544/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/1154861631/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz \
+	--prefix rep1-pr \
+	--peak-type narrowPeak \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/884914813/hg38.blacklist.bed.gz \
+	--nonamecheck \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz[0m
+[2019-03-13 17:41:28,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_pr/shard-0/execution/script
+[2019-03-13 17:41:31,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: job id: 58151
+[2019-03-13 17:41:31,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:41:33,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_pr:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:41:33,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:41:33,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: [38;5;5m
+touch null 
+python $(which encode_idr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/1864502127/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/-1800006544/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/1154861631/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.narrowPeak.gz \
+	--prefix rep1-pr \
+	--idr-thresh 0.05 \
+	--peak-type narrowPeak \
+	--idr-rank p.value \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/884914813/hg38.blacklist.bed.gz \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz[0m
+[2019-03-13 17:41:33,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_pr/shard-0/execution/script
+[2019-03-13 17:41:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: job id: 58274
+[2019-03-13 17:41:36,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:41:52,03] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_pr:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:42:16,18] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.macs2_ppr2:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:42:18,28] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.overlap_ppr, atac.idr_ppr
+[2019-03-13 17:42:18,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:18,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:18,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: [38;5;5m
+touch null 
+python $(which encode_naive_overlap.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/-715499479/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pooled.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/-723258838/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pooled.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/-1954206107/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.pval0.01.300K.narrowPeak.gz \
+	--prefix ppr \
+	--peak-type narrowPeak \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/884914813/hg38.blacklist.bed.gz \
+	--nonamecheck \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/inputs/-83161451/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.tagAlign.gz[0m
+[2019-03-13 17:42:18,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: [38;5;5m
+touch null 
+python $(which encode_idr.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/-715499479/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pooled.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/-723258838/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pooled.pval0.01.300K.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/-1954206107/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.pval0.01.300K.narrowPeak.gz \
+	--prefix ppr \
+	--idr-thresh 0.05 \
+	--peak-type narrowPeak \
+	--idr-rank p.value \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/884914813/hg38.chrom.sizes \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/884914813/hg38.blacklist.bed.gz \
+	 \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/inputs/-83161451/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.tagAlign.gz[0m
+[2019-03-13 17:42:18,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-overlap_ppr/execution/script
+[2019-03-13 17:42:18,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-idr_ppr/execution/script
+[2019-03-13 17:42:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: job id: 60074
+[2019-03-13 17:42:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: job id: 60076
+[2019-03-13 17:42:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:42:21,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:42:28,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.overlap_ppr:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:42:31,54] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.reproducibility_overlap
+[2019-03-13 17:42:31,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:31,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: [38;5;5mpython $(which encode_reproducibility_qc.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/inputs/-47930506/rep1-rep2.overlap.bfilt.narrowPeak.gz \
+	--peaks-pr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/inputs/1939277699/rep1-pr.overlap.bfilt.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/inputs/1931518340/rep2-pr.overlap.bfilt.narrowPeak.gz \
+	--peak-ppr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/inputs/-1634668233/ppr.overlap.bfilt.narrowPeak.gz \
+	--prefix overlap \
+	--peak-type narrowPeak \
+	 \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/inputs/884914813/hg38.chrom.sizes[0m
+[2019-03-13 17:42:31,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_overlap/execution/script
+[2019-03-13 17:42:31,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: job id: 60326
+[2019-03-13 17:42:31,98] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:42:37,05] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_overlap:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:42:47,18] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.idr_ppr:NA:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:42:49,91] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.reproducibility_idr
+[2019-03-13 17:42:50,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_idr:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:50,62] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_idr:NA:1]: [38;5;5mpython $(which encode_reproducibility_qc.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/inputs/-1774481562/rep1-rep2.idr0.05.bfilt.narrowPeak.gz \
+	--peaks-pr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/inputs/-1509861997/rep1-pr.idr0.05.bfilt.narrowPeak.gz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/inputs/-1517621356/rep2-pr.idr0.05.bfilt.narrowPeak.gz \
+	--peak-ppr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/inputs/-1403300569/ppr.idr0.05.bfilt.narrowPeak.gz \
+	--prefix idr \
+	--peak-type narrowPeak \
+	 \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/inputs/884914813/hg38.chrom.sizes[0m
+[2019-03-13 17:42:50,63] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_idr:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-reproducibility_idr/execution/script
+[2019-03-13 17:42:51,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_idr:NA:1]: job id: 61392
+[2019-03-13 17:42:51,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.reproducibility_idr:NA:1]: Status change from - to Done
+[2019-03-13 17:42:55,01] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.ataqc (2 shards)
+[2019-03-13 17:42:55,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:55,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:42:55,72] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: [38;5;5mexport _JAVA_OPTIONS="-Xms256M -Xmx15000M -XX:ParallelGCThreads=1 $_JAVA_OPTIONS"
+
+python $(which encode_ataqc.py) \
+	--paired-end \
+	--read-len-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-62651493/ENCFF031ARQ.subsampled.400.trim.merged.read_length.txt \
+	--flagstat-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/1709229487/ENCFF641SFZ.subsampled.400.trim.merged.flagstat.qc \
+	--bowtie2-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-191516297/ENCFF641SFZ.subsampled.400.trim.merged.align.log \
+	--bam /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-110569917/ENCFF641SFZ.subsampled.400.trim.merged.bam \
+	--nodup-flagstat-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/2129293717/ENCFF641SFZ.subsampled.400.trim.merged.nodup.flagstat.qc \
+	--mito-dup-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/779315102/ENCFF641SFZ.subsampled.400.trim.merged.dupmark.mito_dup.txt \
+	--dup-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/1012902230/ENCFF641SFZ.subsampled.400.trim.merged.dup.qc \
+	--pbc-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-26368689/ENCFF641SFZ.subsampled.400.trim.merged.dupmark.pbc.qc \
+	--nodup-bam /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/309494313/ENCFF641SFZ.subsampled.400.trim.merged.nodup.bam \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/518625859/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--bigwig /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/1095177090/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval.signal.bigwig \
+	--peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1517621356/rep2-pr.idr0.05.bfilt.narrowPeak.gz \
+	--idr-peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1420882133/optimal_peak.narrowPeak.gz \
+	--overlap-peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1411740229/optimal_peak.narrowPeak.gz \
+	--ref-fa /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/884914813/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta.gz \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/884914813/hg38.blacklist.bed.gz \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/884914813/hg38.chrom.sizes \
+	--dnase /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/reg2map_honeybadger2_dnase_all_p10_ucsc.hg19_to_hg38.bed.gz \
+	--tss-enrich /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/hg38_gencode_tss_unique.bed.gz \
+	--prom /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/reg2map_honeybadger2_dnase_prom_p2.hg19_to_hg38.bed.gz \
+	--enh /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/reg2map_honeybadger2_dnase_enh_p2.hg19_to_hg38.bed.gz \
+	--reg2map-bed /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/hg38_celltype_compare_subsample.bed.gz \
+	--reg2map /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/hg38_dnase_avg_fseq_signal_formatted.txt.gz \
+	--roadmap-meta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/inputs/-1619588338/hg38_dnase_avg_fseq_signal_metadata.txt \
+	--mito-chr-name chrM[0m
+[2019-03-13 17:42:55,72] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: [38;5;5mexport _JAVA_OPTIONS="-Xms256M -Xmx15000M -XX:ParallelGCThreads=1 $_JAVA_OPTIONS"
+
+python $(which encode_ataqc.py) \
+	--paired-end \
+	--read-len-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-54892134/ENCFF248EJF.subsampled.400.trim.merged.read_length.txt \
+	--flagstat-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/1716988846/ENCFF341MYG.subsampled.400.trim.merged.flagstat.qc \
+	--bowtie2-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-183756938/ENCFF341MYG.subsampled.400.trim.merged.align.log \
+	--bam /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-102810558/ENCFF341MYG.subsampled.400.trim.merged.bam \
+	--nodup-flagstat-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/2137053076/ENCFF341MYG.subsampled.400.trim.merged.nodup.flagstat.qc \
+	--mito-dup-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/787074461/ENCFF341MYG.subsampled.400.trim.merged.dupmark.mito_dup.txt \
+	--dup-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/1020661589/ENCFF341MYG.subsampled.400.trim.merged.dup.qc \
+	--pbc-log /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-18609330/ENCFF341MYG.subsampled.400.trim.merged.dupmark.pbc.qc \
+	--nodup-bam /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/317253672/ENCFF341MYG.subsampled.400.trim.merged.nodup.bam \
+	--ta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/526385218/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.tagAlign.gz \
+	--bigwig /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/1102936449/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval.signal.bigwig \
+	--peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1509861997/rep1-pr.idr0.05.bfilt.narrowPeak.gz \
+	--idr-peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1420882133/optimal_peak.narrowPeak.gz \
+	--overlap-peak /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1411740229/optimal_peak.narrowPeak.gz \
+	--ref-fa /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/884914813/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta.gz \
+	--blacklist /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/884914813/hg38.blacklist.bed.gz \
+	--chrsz /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/884914813/hg38.chrom.sizes \
+	--dnase /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/reg2map_honeybadger2_dnase_all_p10_ucsc.hg19_to_hg38.bed.gz \
+	--tss-enrich /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/hg38_gencode_tss_unique.bed.gz \
+	--prom /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/reg2map_honeybadger2_dnase_prom_p2.hg19_to_hg38.bed.gz \
+	--enh /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/reg2map_honeybadger2_dnase_enh_p2.hg19_to_hg38.bed.gz \
+	--reg2map-bed /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/hg38_celltype_compare_subsample.bed.gz \
+	--reg2map /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/hg38_dnase_avg_fseq_signal_formatted.txt.gz \
+	--roadmap-meta /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/inputs/-1619588338/hg38_dnase_avg_fseq_signal_metadata.txt \
+	--mito-chr-name chrM[0m
+[2019-03-13 17:42:55,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-1/execution/script
+[2019-03-13 17:42:55,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-ataqc/shard-0/execution/script
+[2019-03-13 17:42:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: job id: 61509
+[2019-03-13 17:42:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: job id: 61511
+[2019-03-13 17:42:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:42:56,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: Status change from - to WaitingForReturnCodeFile
+[2019-03-13 17:50:00,29] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:0:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:50:20,51] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.ataqc:1:1]: Status change from WaitingForReturnCodeFile to Done
+[2019-03-13 17:50:22,70] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Starting atac.qc_report
+[2019-03-13 17:50:23,61] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.qc_report:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-13 17:50:23,68] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.qc_report:NA:1]: [38;5;5mpython $(which encode_qc_report.py) \
+	--pipeline-ver v1.1.6 \
+	--title 'ENCSR356KRQ (subsampled 1/400 reads)' \
+	--desc 'ATAC-seq on primary keratinocytes in day 0.0 of differentiation' \
+	--genome hg38_local.tsv \
+	--multimapping 4 \
+	--paired-end \
+	--pipeline-type atac \
+	--peak-caller macs2 \
+	--macs2-cap-num-peak 300000 \
+	 \
+	--idr-thresh 0.05 \
+	--flagstat-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1716988846/ENCFF341MYG.subsampled.400.trim.merged.flagstat.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1709229487/ENCFF641SFZ.subsampled.400.trim.merged.flagstat.qc \
+	--nodup-flagstat-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/2137053076/ENCFF341MYG.subsampled.400.trim.merged.nodup.flagstat.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/2129293717/ENCFF641SFZ.subsampled.400.trim.merged.nodup.flagstat.qc \
+	--dup-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1020661589/ENCFF341MYG.subsampled.400.trim.merged.dup.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1012902230/ENCFF641SFZ.subsampled.400.trim.merged.dup.qc \
+	--pbc-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-18609330/ENCFF341MYG.subsampled.400.trim.merged.dupmark.pbc.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-26368689/ENCFF641SFZ.subsampled.400.trim.merged.dupmark.pbc.qc \
+	--xcor-plots /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/2041737865/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.no_chrM.R1.25M.cc.plot.png /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/2033978506/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.no_chrM.R1.25M.cc.plot.png \
+	--xcor-scores /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-896963419/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.no_chrM.R1.25M.cc.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-904722778/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.no_chrM.R1.25M.cc.qc \
+	--idr-plots /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1753935368/rep1-rep2.idr0.05.unthresholded-peaks.txt.png \
+	--idr-plots-pr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1489315803/rep1-pr.idr0.05.unthresholded-peaks.txt.png /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1497075162/rep2-pr.idr0.05.unthresholded-peaks.txt.png \
+	--idr-plot-ppr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1382754375/ppr.idr0.05.unthresholded-peaks.txt.png \
+	--frip-macs2-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-223336835/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.bfilt.frip.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-231096194/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pval0.01.300K.bfilt.frip.qc \
+	--frip-macs2-qcs-pr1 /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/486303661/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.bfilt.frip.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/478544302/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr1.pval0.01.300K.bfilt.frip.qc \
+	--frip-macs2-qcs-pr2 /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1116762286/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.bfilt.frip.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1109002927/ENCFF641SFZ.subsampled.400.trim.merged.nodup.tn5.pr2.pval0.01.300K.bfilt.frip.qc \
+	--frip-macs2-qc-pooled /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/962562723/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pooled.pval0.01.300K.bfilt.frip.qc \
+	--frip-macs2-qc-ppr1 /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2093697945/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr1.pooled.pval0.01.300K.bfilt.frip.qc \
+	--frip-macs2-qc-ppr2 /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2101457304/ENCFF341MYG.subsampled.400.trim.merged.nodup.tn5.pr2.pooled.pval0.01.300K.bfilt.frip.qc \
+	--frip-idr-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/2032230214/rep1-rep2.idr0.05.bfilt.frip.qc \
+	--frip-idr-qcs-pr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1998117517/rep1-pr.idr0.05.bfilt.frip.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2005876876/rep2-pr.idr0.05.bfilt.frip.qc \
+	--frip-idr-qc-ppr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-1891556089/ppr.idr0.05.bfilt.frip.qc \
+	--frip-overlap-qcs /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-536186026/rep1-rep2.overlap.bfilt.frip.qc \
+	--frip-overlap-qcs-pr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1451022179/rep1-pr.overlap.bfilt.frip.qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/1443262820/rep2-pr.overlap.bfilt.frip.qc \
+	--frip-overlap-qc-ppr /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2122923753/ppr.overlap.bfilt.frip.qc \
+	--idr-reproducibility-qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-47412266/idr.reproducibility.qc \
+	--overlap-reproducibility-qc /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-38270362/overlap.reproducibility.qc \
+	--ataqc-txts /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2089782406/ENCFF341MYG.subsampled.400.trim.merged_qc.txt /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/-2097541765/ENCFF641SFZ.subsampled.400.trim.merged_qc.txt \
+	--ataqc-htmls /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/239980798/ENCFF341MYG.subsampled.400.trim.merged_qc.html /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/inputs/232221439/ENCFF641SFZ.subsampled.400.trim.merged_qc.html \
+	--out-qc-html qc.html \
+	--out-qc-json qc.json \[0m
+[2019-03-13 17:50:23,69] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.qc_report:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/execution/script
+[2019-03-13 17:50:26,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.qc_report:NA:1]: job id: 75435
+[2019-03-13 17:50:26,97] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m9592d1b4[0matac.qc_report:NA:1]: Status change from - to Done
+[2019-03-13 17:50:28,82] [info] WorkflowExecutionActor-9592d1b4-be39-422d-a398-b644159e05a3 [[38;5;2m9592d1b4[0m]: Workflow atac complete. Final Outputs:
+{
+  "atac.report": "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/execution/glob-eae855c82d0f7e2185388856e7b2cc7b/qc.html",
+  "atac.qc_json": "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/execution/glob-3440f922973abb7a616aaf203e0db08b/qc.json",
+  "atac.qc_json_ref_match": false
+}
+[2019-03-13 17:50:28,84] [info] WorkflowManagerActor WorkflowActor-9592d1b4-be39-422d-a398-b644159e05a3 is in a terminal state: WorkflowSucceededState
+[2019-03-13 17:50:49,25] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
+{
+  "outputs": {
+    "atac.qc_json": "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/execution/glob-3440f922973abb7a616aaf203e0db08b/qc.json",
+    "atac.report": "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/9592d1b4-be39-422d-a398-b644159e05a3/call-qc_report/execution/glob-eae855c82d0f7e2185388856e7b2cc7b/qc.html",
+    "atac.qc_json_ref_match": false
+  },
+  "id": "9592d1b4-be39-422d-a398-b644159e05a3"
+}
+[2019-03-13 17:50:52,08] [info] SingleWorkflowRunnerActor writing metadata to metadata.json
+[2019-03-13 17:50:52,14] [info] Workflow polling stopped
+[2019-03-13 17:50:52,15] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+[2019-03-13 17:50:52,15] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+[2019-03-13 17:50:52,15] [info] Aborting all running workflows.
+[2019-03-13 17:50:52,15] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+[2019-03-13 17:50:52,15] [info] WorkflowStoreActor stopped
+[2019-03-13 17:50:52,15] [info] JobExecutionTokenDispenser stopped
+[2019-03-13 17:50:52,15] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+[2019-03-13 17:50:52,15] [info] WorkflowLogCopyRouter stopped
+[2019-03-13 17:50:52,15] [info] WorkflowManagerActor All workflows finished
+[2019-03-13 17:50:52,16] [info] WorkflowManagerActor stopped
+[2019-03-13 17:50:52,16] [info] Connection pools shut down
+[2019-03-13 17:50:52,16] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] Shutting down IoProxy - Timeout = 1800 seconds
+[2019-03-13 17:50:52,16] [info] SubWorkflowStoreActor stopped
+[2019-03-13 17:50:52,16] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+[2019-03-13 17:50:52,16] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+[2019-03-13 17:50:52,16] [info] CallCacheWriteActor stopped
+[2019-03-13 17:50:52,16] [info] KvWriteActor Shutting down: 0 queued messages to process
+[2019-03-13 17:50:52,16] [info] IoProxy stopped
+[2019-03-13 17:50:52,16] [info] DockerHashActor stopped
+[2019-03-13 17:50:52,16] [info] ServiceRegistryActor stopped
+[2019-03-13 17:50:52,16] [info] JobStoreActor stopped
+[2019-03-13 17:50:52,17] [info] Database closed
+[2019-03-13 17:50:52,17] [info] Stream materializer shut down
+[2019-03-13 17:50:52,20] [info] Automatic shutdown of the async connection
+[2019-03-13 17:50:52,20] [info] Gracefully shutdown sentry threads.
+[2019-03-13 17:50:52,20] [info] Shutdown finished.
+---- End Job ----
+Wed Mar 13 17:50:52 CET 2019
+Job ID: 1961001
+Job Name: ENCSR356KRQ_subsampled
+Resources Requested: walltime=12:00:00,mem=20gb,nodes=1:ppn=4,neednodes=1:ppn=4
+Resources Used: cput=01:04:30,vmem=55419132kb,walltime=00:36:15,mem=4448092kb,energy_used=0
