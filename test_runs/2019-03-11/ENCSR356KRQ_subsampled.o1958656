@@ -1,0 +1,161 @@
+submit directory: /sulb1/mmalfait/atac-seq-pipeline
+jobid: 1958656
+hostname: nic25
+Mon Mar 11 18:20:12 CET 2019
+--- Start Job ---
+[2019-03-11 18:20:17,29] [info] Running with database db.url = jdbc:hsqldb:mem:33844647-4858-4c2f-a9f1-a02b291edd15;shutdown=false;hsqldb.tx=mvcc
+[2019-03-11 18:20:25,21] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+[2019-03-11 18:20:25,22] [info] [RenameWorkflowOptionsInMetadata] 100%
+[2019-03-11 18:20:25,32] [info] Running with database db.url = jdbc:hsqldb:mem:f524e9ee-a291-4a2a-9dcd-60988e8c93ec;shutdown=false;hsqldb.tx=mvcc
+[2019-03-11 18:20:25,62] [[38;5;220mwarn[0m] This actor factory is deprecated. Please use cromwell.backend.google.pipelines.v1alpha2.PipelinesApiLifecycleActorFactory for PAPI v1 or cromwell.backend.google.pipelines.v2alpha1.PipelinesApiLifecycleActorFactory for PAPI v2
+[2019-03-11 18:20:25,67] [[38;5;220mwarn[0m] Couldn't find a suitable DSN, defaulting to a Noop one.
+[2019-03-11 18:20:25,67] [info] Using noop to send events.
+[2019-03-11 18:20:25,90] [info] Slf4jLogger started
+[2019-03-11 18:20:26,09] [info] Workflow heartbeat configuration:
+{
+  "cromwellId" : "cromid-296bade",
+  "heartbeatInterval" : "2 minutes",
+  "ttl" : "10 minutes",
+  "writeBatchSize" : 10000,
+  "writeThreshold" : 10000
+}
+[2019-03-11 18:20:26,15] [info] Metadata summary refreshing every 2 seconds.
+[2019-03-11 18:20:26,22] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+[2019-03-11 18:20:26,22] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+[2019-03-11 18:20:26,23] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+[2019-03-11 18:20:27,05] [info] JobExecutionTokenDispenser - Distribution rate: 50 per 1 seconds.
+[2019-03-11 18:20:27,08] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-11 18:20:27,08] [info] SingleWorkflowRunnerActor: Version 34
+[2019-03-11 18:20:27,08] [info] PAPIQueryManager Running with 3 workers
+[2019-03-11 18:20:27,08] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-11 18:20:27,08] [info] JES batch polling interval is 33333 milliseconds
+[2019-03-11 18:20:27,09] [info] SingleWorkflowRunnerActor: Submitting workflow
+[2019-03-11 18:20:27,14] [info] Unspecified type (Unspecified version) workflow 99f85091-2946-4f78-9f38-934655c5911a submitted
+[2019-03-11 18:20:27,20] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2m99f85091-2946-4f78-9f38-934655c5911a[0m
+[2019-03-11 18:20:27,21] [info] 1 new workflows fetched
+[2019-03-11 18:20:27,21] [info] WorkflowManagerActor Starting workflow [38;5;2m99f85091-2946-4f78-9f38-934655c5911a[0m
+[2019-03-11 18:20:27,21] [[38;5;220mwarn[0m] SingleWorkflowRunnerActor: received unexpected message: Done in state RunningSwraData
+[2019-03-11 18:20:27,22] [info] WorkflowManagerActor Successfully started WorkflowActor-99f85091-2946-4f78-9f38-934655c5911a
+[2019-03-11 18:20:27,22] [info] Retrieved 1 workflows from the WorkflowStoreActor
+[2019-03-11 18:20:27,22] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+[2019-03-11 18:20:27,28] [info] MaterializeWorkflowDescriptorActor [[38;5;2m99f85091[0m]: Parsing workflow as WDL draft-2
+[2019-03-11 18:20:55,54] [info] MaterializeWorkflowDescriptorActor [[38;5;2m99f85091[0m]: Call-to-Backend assignments: atac.qc_report -> Local, atac.pool_ta_pr2 -> Local, atac.reproducibility_overlap -> Local, atac.trim_adapter -> Local, atac.read_genome_tsv -> Local, atac.macs2_pr1 -> Local, atac.reproducibility_idr -> Local, atac.ataqc -> Local, atac.overlap_pr -> Local, atac.macs2_pooled -> Local, atac.pool_ta -> Local, atac.macs2_ppr1 -> Local, atac.xcor -> Local, atac.overlap_ppr -> Local, atac.overlap -> Local, atac.idr_pr -> Local, atac.macs2_ppr2 -> Local, atac.bam2ta -> Local, atac.idr -> Local, atac.pool_ta_pr1 -> Local, atac.macs2 -> Local, atac.macs2_pr2 -> Local, atac.filter -> Local, atac.idr_ppr -> Local, atac.bowtie2 -> Local, atac.spr -> Local
+[2019-03-11 18:20:55,63] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,63] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,65] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [preemptible, disks, cpu, time, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:55,66] [[38;5;220mwarn[0m] Local [[38;5;2m99f85091[0m]: Key/s [cpu, memory, time, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2019-03-11 18:20:57,89] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Starting atac.read_genome_tsv
+[2019-03-11 18:20:57,89] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Condition met: 'enable_idr'. Running conditional section
+[2019-03-11 18:20:57,91] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Condition met: 'enable_xcor && length(xcor_scores) < 1'. Running conditional section
+[2019-03-11 18:20:57,91] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Condition met: '!align_only && !true_rep_only && enable_idr'. Running conditional section
+[2019-03-11 18:20:57,91] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Condition met: '!align_only && !true_rep_only'. Running conditional section
+[2019-03-11 18:20:57,91] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Condition met: '!true_rep_only'. Running conditional section
+[2019-03-11 18:20:58,14] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.read_genome_tsv:NA:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-11 18:20:58,55] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.read_genome_tsv:NA:1]: [38;5;5mcat /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-read_genome_tsv/inputs/-1316539498/hg38_local.tsv > 'tmp.tsv'[0m
+[2019-03-11 18:20:58,59] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.read_genome_tsv:NA:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-read_genome_tsv/execution/script
+[2019-03-11 18:21:01,25] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.read_genome_tsv:NA:1]: job id: 9734
+[2019-03-11 18:21:01,25] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.read_genome_tsv:NA:1]: Status change from - to Done
+[2019-03-11 18:21:04,04] [info] WorkflowExecutionActor-99f85091-2946-4f78-9f38-934655c5911a [[38;5;2m99f85091[0m]: Starting atac.trim_adapter (2 shards)
+[2019-03-11 18:21:04,07] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:1:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-11 18:21:04,07] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:0:1]: Unrecognized runtime attribute keys: disks, cpu, time, memory
+[2019-03-11 18:21:04,15] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:0:1]: [38;5;5mpython $(which encode_trim_adapter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/execution/write_tsv_184b62b7dd1a175261ff351e36194dcc.tmp \
+	--adapters /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/execution/write_tsv_d41d8cd98f00b204e9800998ecf8427e.tmp \
+	--paired-end \
+	--auto-detect-adapter \
+	--min-trim-len 5 \
+	--err-rate 0.1 \
+	--nth 2[0m
+[2019-03-11 18:21:04,16] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:1:1]: [38;5;5mpython $(which encode_trim_adapter.py) \
+	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/execution/write_tsv_7ea707f0808b4f0cb3aeb051f76c34a3.tmp \
+	--adapters /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/execution/write_tsv_d41d8cd98f00b204e9800998ecf8427e.tmp \
+	--paired-end \
+	--auto-detect-adapter \
+	--min-trim-len 5 \
+	--err-rate 0.1 \
+	--nth 2[0m
+[2019-03-11 18:21:04,16] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:0:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/execution/script
+[2019-03-11 18:21:04,17] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:1:1]: executing: /bin/bash /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/execution/script
+[2019-03-11 18:21:06,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:1:1]: job id: 9775
+[2019-03-11 18:21:06,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:0:1]: job id: 9767
+[2019-03-11 18:21:06,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:1:1]: Status change from - to Done
+[2019-03-11 18:21:06,24] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m99f85091[0matac.trim_adapter:0:1]: Status change from - to Done
+[2019-03-11 18:21:07,13] [[38;5;1merror[0m] WorkflowManagerActor Workflow 99f85091-2946-4f78-9f38-934655c5911a failed (during ExecutingWorkflowState): Job atac.trim_adapter:0:1 exited with return code 1 which has not been declared as a valid return code. See 'continueOnReturnCode' runtime attribute for more details.
+Check the content of stderr for potential additional information: /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/execution/stderr.
+ which: no encode_trim_adapter.py in (/apps/brussel/CO7/skylake/software/Java/1.8.0_181:/apps/brussel/CO7/skylake/software/Java/1.8.0_181/bin:/cm/shared/apps/mam/current/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin)
+  File "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/execution/write_tsv_184b62b7dd1a175261ff351e36194dcc.tmp", line 1
+    /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/inputs/-1930727505/ENCFF341MYG.subsampled.400.fastq.gz	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-0/inputs/-1930727504/ENCFF248EJF.subsampled.400.fastq.gz
+    ^
+SyntaxError: invalid syntax
+
+Job atac.trim_adapter:1:1 exited with return code 1 which has not been declared as a valid return code. See 'continueOnReturnCode' runtime attribute for more details.
+Check the content of stderr for potential additional information: /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/execution/stderr.
+ which: no encode_trim_adapter.py in (/apps/brussel/CO7/skylake/software/Java/1.8.0_181:/apps/brussel/CO7/skylake/software/Java/1.8.0_181/bin:/cm/shared/apps/mam/current/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin)
+  File "/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/execution/write_tsv_7ea707f0808b4f0cb3aeb051f76c34a3.tmp", line 1
+    /sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/inputs/-1043223824/ENCFF641SFZ.subsampled.400.fastq.gz	/sulb1/mmalfait/atac-seq-pipeline/cromwell-executions/atac/99f85091-2946-4f78-9f38-934655c5911a/call-trim_adapter/shard-1/inputs/-1043223823/ENCFF031ARQ.subsampled.400.fastq.gz
+    ^
+SyntaxError: invalid syntax
+
+[2019-03-11 18:21:07,13] [info] WorkflowManagerActor WorkflowActor-99f85091-2946-4f78-9f38-934655c5911a is in a terminal state: WorkflowFailedState
+[2019-03-11 18:21:22,78] [info] SingleWorkflowRunnerActor workflow finished with status 'Failed'.
+[2019-03-11 18:21:26,31] [info] SingleWorkflowRunnerActor writing metadata to metadata.json
+[2019-03-11 18:21:26,34] [info] Workflow polling stopped
+[2019-03-11 18:21:26,35] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+[2019-03-11 18:21:26,36] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+[2019-03-11 18:21:26,36] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+[2019-03-11 18:21:26,36] [info] Aborting all running workflows.
+[2019-03-11 18:21:26,36] [info] WorkflowLogCopyRouter stopped
+[2019-03-11 18:21:26,36] [info] WorkflowStoreActor stopped
+[2019-03-11 18:21:26,37] [info] JobExecutionTokenDispenser stopped
+[2019-03-11 18:21:26,37] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+[2019-03-11 18:21:26,37] [info] WorkflowManagerActor All workflows finished
+[2019-03-11 18:21:26,37] [info] WorkflowManagerActor stopped
+[2019-03-11 18:21:26,37] [info] Connection pools shut down
+[2019-03-11 18:21:26,37] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] SubWorkflowStoreActor stopped
+[2019-03-11 18:21:26,37] [info] Shutting down IoProxy - Timeout = 1800 seconds
+[2019-03-11 18:21:26,37] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+[2019-03-11 18:21:26,37] [info] JobStoreActor stopped
+[2019-03-11 18:21:26,37] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+[2019-03-11 18:21:26,37] [info] CallCacheWriteActor stopped
+[2019-03-11 18:21:26,37] [info] KvWriteActor Shutting down: 0 queued messages to process
+[2019-03-11 18:21:26,37] [info] DockerHashActor stopped
+[2019-03-11 18:21:26,37] [info] IoProxy stopped
+[2019-03-11 18:21:26,37] [info] ServiceRegistryActor stopped
+[2019-03-11 18:21:26,39] [info] Database closed
+[2019-03-11 18:21:26,39] [info] Stream materializer shut down
+[2019-03-11 18:21:26,42] [info] Automatic shutdown of the async connection
+[2019-03-11 18:21:26,42] [info] Gracefully shutdown sentry threads.
+[2019-03-11 18:21:26,42] [info] Shutdown finished.
+---- End Job ----
+Mon Mar 11 18:21:26 CET 2019
+Job ID: 1958656
+Job Name: ENCSR356KRQ_subsampled
+Resources Requested: walltime=12:00:00,mem=20gb,nodes=1:ppn=4,neednodes=1:ppn=4
+Resources Used: cput=00:00:58,vmem=41564956kb,walltime=00:01:15,mem=932608kb,energy_used=0

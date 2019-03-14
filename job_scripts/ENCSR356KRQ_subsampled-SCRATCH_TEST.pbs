@@ -1,0 +1,100 @@
+#!/bin/bash -l
+
+#PBS -N ENCSR356KRQ_subsampled_scratch
+#PBS -l walltime=12:00:00
+#PBS -l mem=20gb
+#PBS -l nodes=1:ppn=4
+#PBS -m bea
+
+# explanation PBS parameters
+# ----------------------
+# PBS -N: 
+#	setting name of job, this will appear in "$ qstat"
+#	this will also be used as the name of the directory to store results		
+# PBS -l walltime:
+#  walltime for the job
+#   give long time enough to finish your pipeline
+#   <12 hr: small/test samples
+#   >24 hr: large samples
+# PBS -l mem:
+#   total amount of memory
+#     depends on the size of your FASTQs
+#     but should be <= NUM_CONCURRENT_TASK x 20GB for big samples
+#     or <= NUM_CONCURRENT_TASK x 10GB for small samples
+#     do not request too much memory
+#     cluster will not accept your job
+# PBS -l nodes:
+#   max number of cpus for each pipeline
+#     should be <= NUM_CONCURRENT_TASK x "atac.bowtie2_cpu" in input JSON file
+#     since bowtie2 is a bottlenecking task in the pipeline
+#     "atac.bowtie2_cpu" is a number of cpus per replicate
+
+# load java module if it exists
+module load Java || true
+
+# activate pipeline's Conda environment if Conda env exists
+source activate encode-atac-seq-pipeline
+
+# set pipeline directory
+PIPELINE_DIR=$HOME/atac-seq-pipeline
+
+# set directory to run job in $WORKDIR/atac-seq-runs, using the provided job-name
+# in case directory already exists, will use this existing directory
+mkdir -p  $WORKDIR/atac-seq-runs/$JOBNAME
+RUN_DIR=$WORKDIR/atac-seq-runs/$JOBNAME
+
+# use input JSON for a small test sample
+#  you make an input JSON for your own sample
+#  start from any of two templates for single-ended and paired-ended samples
+#  (examples/template_se.json, examples/template_pe.json)
+#  do not use an input JSON file for a test sample (ENCSR356KRQ)
+#  it's a sample with multimapping reads
+INPUT=$PIPELINE_DIR/examples/hydra/ENCSR356KRQ_subsampled.json
+
+# specify path to input data
+#  this ENTIRE directory will be copied to the $WORKDIR (for faster access)
+#  before executing the pipeline, so it's important that 
+#  all the necessary data is included, but should not include unnecessary files!
+# ALSO, this path should correspond to what is defined in the INPUT JSON.
+INPUT_DATA=test_sample/
+
+# same for genome data
+GENOME_DATA=test_genome_database/
+
+# If this pipeline fails, then use this metadata JSON file to resume a failed pipeline from where it left
+# See details in /utils/resumer/README.md
+PIPELINE_METADATA=metadata.json
+
+# limit number of concurrent tasks
+#  we recommend to use a number of replicates here
+#  so that all replicates are processed in parellel at the same time.
+#  make sure that resource settings in your input JSON file
+#  are consistent with PBS resource settings (--mem, --cpus-per-task)
+#  in this script
+NUM_CONCURRENT_TASK=2
+
+# copy input and genome data to $WORKDIR
+cp -r $INPUT_DATA $WORKDIR/atac-seq-runs/
+cp -r $GENOME_DATA $WORKDIR/atac-seq-runs/
+
+cd $PBS_O_WORKDIR
+echo submit directory: $PWD
+echo jobid: $PBS_JOBID
+echo hostname: $HOSTNAME
+date
+echo --- Start Job ---
+# change to WORKDIR
+cd $WORKDIR/atac-seq-runs/
+
+# run pipeline
+java -jar -Dconfig.file=$PIPELINE_DIR/backends/backend.conf \
+-Dbackend.providers.Local.config.concurrent-job-limit=${NUM_CONCURRENT_TASK} \
+$PIPELINE_DIR/cromwell-34.jar run $PIPELINE_DIR/atac.wdl -i ${INPUT} -m ${PIPELINE_METADATA}
+echo ---- End Job ----
+date
+
+
+
+# copy results back to $HOME?
+# use $PIPELINE_DIR/results/$JOBNAME/ as destination
+
