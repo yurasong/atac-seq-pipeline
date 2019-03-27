@@ -31,7 +31,7 @@
 module load Java || true
 
 # activate pipeline's Conda environment if Conda env exists
-source activate encode-atac-seq-pipeline-python3
+source activate encode-atac-seq-pipeline
 
 # use input JSON for a small test sample
 #  you make an input JSON for your own sample
