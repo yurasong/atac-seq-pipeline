@@ -1,9 +1,9 @@
 #!/bin/bash -l
 
 #PBS -N Yura_test_data
-#PBS -l walltime=12:00:00
-#PBS -l mem=20gb
-#PBS -l nodes=1:ppn=4
+#PBS -l walltime=6:00:00
+#PBS -l mem=5gb
+#PBS -l nodes=1:ppn=1
 #PBS -m bea
 
 # explanation PBS parameters
