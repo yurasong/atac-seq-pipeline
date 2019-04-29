@@ -84,21 +84,21 @@ Let us take a close look at the following template JSON. Comments are not allowe
     "atac.fastqs_rep2_R2" : [ "rep2_R2_L1.fastq.gz", "rep2_R2_L2.fastq.gz" ],
 
     // If you start from BAMs then define these, otherwise remove from this file.
-    // You can define up to 6 replicates. The following example array has two replicates.
+    // You can define up to 10 replicates. The following example array has two replicates.
     "atac.bams" : [
         "raw_rep1.bam",
         "raw_rep2.bam"
     ],
 
     // If you start from filtered/deduped BAMs then define these, otherwise remove from this file.
-    // You can define up to 6 replicates. The following example array has two replicates.
+    // You can define up to 10 replicates. The following example array has two replicates.
     "atac.nodup_bams" : [
         "nodup_rep1.bam",
         "nodup_rep2.bam"
     ],
 
     // If you start from TAG-ALIGNs then define these, otherwise remove from this file.
-    // You can define up to 6 replicates. The following example array has two replicates.
+    // You can define up to 10 replicates. The following example array has two replicates.
     "atac.tas" : [
         "rep1.tagAlign.gz",
         "rep2.tagAlign.gz"
@@ -120,8 +120,8 @@ Let us take a close look at the following template JSON. Comments are not allowe
     // Otherwise define adapters for each FASTQ.
     // Adapters should have the same dimension as FASTQs.
     "atac.adapters_rep1_R1" : [ "AATTCCGG", "AATTCCGG", "AATTCCGG" ],
-    "atac.adapters_rep2_R2" : [ "AATTCCGG", "AATTCCGG" ],
-    "atac.adapters_rep1_R1" : [ "AATTCCGG", "AATTCCGG", "AATTCCGG" ],
+    "atac.adapters_rep1_R2" : [ "AATTCCGG", "AATTCCGG" ],
+    "atac.adapters_rep2_R1" : [ "AATTCCGG", "AATTCCGG", "AATTCCGG" ],
     "atac.adapters_rep2_R2" : [ "AATTCCGG", "AATTCCGG" ],
 
     ////////// 4) Pipeline parameters //////////
