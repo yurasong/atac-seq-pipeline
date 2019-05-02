@@ -518,7 +518,7 @@ def get_picard_dup_stats(picard_dup_file, paired_status):
                 dup_stats['READ_PAIR_DUPLICATES'] = line_elems[5]
                 dup_stats['READ_PAIRS_EXAMINED'] = line_elems[2]
                 if paired_status == 'Paired-ended':
-                    return float(line_elems[5]), float(line_elems[7])
+                    return 2*float(line_elems[5]), float(line_elems[7])
                 else:
                     return float(line_elems[4]), float(line_elems[7])
 
@@ -635,6 +635,21 @@ def get_samtools_flagstat(bam_file):
     return flagstat, mapped_reads
 
 
+def get_mapped_count(bam_file):
+    """run samtools view, removing unmapped (0x4) and nonprimary (0x100)
+    """
+    # Current bug in pysam.view module...
+    logging.info("getting mapped count...")
+
+    # There is a bug in pysam.view('-c'), so just use subprocess
+    num_mapped = int(subprocess.check_output(
+        ["samtools", "view",
+         "-F", "260", "-c",
+         bam_file]).strip())
+    
+    return num_mapped
+
+
 def get_fract_mapq(bam_file, q=30):
     '''
     Runs samtools view to get the fraction of reads of a certain
@@ -644,12 +659,14 @@ def get_fract_mapq(bam_file, q=30):
     logging.info('samtools mapq 30...')
 
     # There is a bug in pysam.view('-c'), so just use subprocess
-    num_qreads = int(subprocess.check_output(['samtools',
-                                              'view', '-c',
-                                              '-q', str(q), bam_file]).strip())
-    tot_reads = int(subprocess.check_output(['samtools',
-                                             'view', '-c',
-                                             bam_file]).strip())
+    num_qreads = int(subprocess.check_output(
+        ["samtools", "view",
+         "-F", "256", "-c",
+         '-q', str(q), bam_file]).strip())
+    tot_reads = int(subprocess.check_output(
+        ["samtools", "view",
+         "-F", "256", "-c",
+         bam_file]).strip())
     fract_good_mapq = float(num_qreads)/tot_reads
     return num_qreads, fract_good_mapq
 
@@ -660,12 +677,14 @@ def get_final_read_count(first_bam, last_bam):
     '''
     logging.info('final read counts...')
     # Bug in pysam.view
-    num_reads_last_bam = int(subprocess.check_output(['samtools',
-                                                      'view', '-c',
-                                                      last_bam]).strip())
-    num_reads_first_bam = int(subprocess.check_output(['samtools',
-                                                       'view', '-c',
-                                                       first_bam]).strip())
+    num_reads_last_bam = int(subprocess.check_output(
+        ["samtools", "view",
+         "-F", "256", "-c",
+         last_bam]).strip())
+    num_reads_first_bam = int(subprocess.check_output(
+        ["samtools", "view",
+         "-F", "256", "-c",
+         first_bam]).strip())
     fract_reads_left = float(num_reads_last_bam)/num_reads_first_bam
 
     return num_reads_first_bam, num_reads_last_bam, fract_reads_left
@@ -844,7 +863,7 @@ def get_peak_counts(raw_peaks, naive_overlap_peaks=None, idr_peaks=None):
 
     # Literally just throw these into a QC table
     results = []
-    results.append(QCGreaterThanEqualCheck('Raw peaks', 10000)(raw_count))
+    # results.append(QCGreaterThanEqualCheck('Raw peaks', 10000)(raw_count))
     results.append(QCGreaterThanEqualCheck('Naive overlap peaks',
                                            10000)(naive_count))
     results.append(QCGreaterThanEqualCheck('IDR peaks', 10000)(idr_count))
@@ -892,23 +911,29 @@ def fragment_length_qc(data):
     MONO_NUC_UPPER_LIMIT = 300
 
     # % of NFR vs res
-    percent_nfr = data[:NFR_UPPER_LIMIT].sum() / data.sum()
+    nfr_reads = data[data[:,0] < NFR_UPPER_LIMIT][:,1]
+    percent_nfr = nfr_reads.sum() / data[:,1].sum()
     results.append(
         QCGreaterThanEqualCheck('Fraction of reads in NFR', 0.4)(percent_nfr))
 
     # % of NFR vs mononucleosome
+    mono_nuc_reads = data[
+        (data[:,0] > MONO_NUC_LOWER_LIMIT) &
+        (data[:,0] <= MONO_NUC_UPPER_LIMIT)][:,1]
+    
     percent_nfr_vs_mono_nuc = (
-        data[:NFR_UPPER_LIMIT].sum() /
-        data[MONO_NUC_LOWER_LIMIT:MONO_NUC_UPPER_LIMIT + 1].sum())
+        nfr_reads.sum() /
+        mono_nuc_reads.sum())
     results.append(
         QCGreaterThanEqualCheck('NFR / mono-nuc reads', 2.5)(
             percent_nfr_vs_mono_nuc))
 
     # peak locations
+    pos_start_val = data[0,0] # this may be greater than 0
     peaks = find_peaks_cwt(data[:, 1], np.array([25]))
-    nuc_range_metrics = [('Presence of NFR peak', 20, 90),
-                         ('Presence of Mono-Nuc peak', 120, 250),
-                         ('Presence of Di-Nuc peak', 300, 500)]
+    nuc_range_metrics = [('Presence of NFR peak', 20 - pos_start_val, 90 - pos_start_val),
+                         ('Presence of Mono-Nuc peak', 120 - pos_start_val, 250 - pos_start_val),
+                         ('Presence of Di-Nuc peak', 300 - pos_start_val, 500 - pos_start_val)]
     for range_metric in nuc_range_metrics:
         results.append(QCHasElementInRange(*range_metric)(peaks))
 
@@ -1133,6 +1158,11 @@ if your file is paired end, then you should divide these counts by two.
   <pre>
 {{ sample['samtools_flagstat'] }}
   </pre>
+<pre>
+Note that the flagstat command counts alignments, not reads. please 
+use the read counts table to get accurate counts of reads at each
+stage of the pipeline.
+</pre>
 {% endif %}
 
 {% if 'filtering_stats' in sample %}
@@ -1300,8 +1330,8 @@ into consideration as necessary.
   {{ inline_img(sample['enrichment_plots']['tss']) }}
   <pre>
 Open chromatin assays should show enrichment in open chromatin sites, such as
-TSS's. An average TSS enrichment is above 6-7. A strong TSS enrichment is
-above 10.
+TSS's. An average TSS enrichment in human (hg19) is above 6. A strong TSS enrichment is
+above 10. For other references please see https://www.encodeproject.org/atac-seq/
   </pre>
 {% endif %}
 
@@ -1515,8 +1545,9 @@ def main():
                                                     MITO_CHR_NAME,
                                                     paired_status,
                                                     use_sambamba=USE_SAMBAMBA_MARKDUP)
-    [flagstat, mapped_count] = get_samtools_flagstat(ALIGNED_BAM)
-
+    flagstat, _ = get_samtools_flagstat(ALIGNED_BAM)
+    mapped_count = get_mapped_count(ALIGNED_BAM)
+    
     # Final read statistics
     first_read_count, final_read_count, \
         fract_reads_left = get_final_read_count(ALIGNED_BAM,
