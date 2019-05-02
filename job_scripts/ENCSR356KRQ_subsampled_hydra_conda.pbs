@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #PBS -N ENCSR356KRQ_subsampled
-#PBS -l walltime=12:00:00
+#PBS -l walltime=48:00:00
 #PBS -l mem=20gb
 #PBS -l nodes=1:ppn=4
 #PBS -m bea
@@ -39,11 +39,11 @@ source activate encode-atac-seq-pipeline
 #  (examples/template_se.json, examples/template_pe.json)
 #  do not use an input JSON file for a test sample (ENCSR356KRQ)
 #  it's a sample with multimapping reads
-INPUT=examples/hydra/ENCSR356KRQ_subsampled.json
+INPUT=examples/local/ENCSR356KRQ_subsampled.json
 
 # If this pipeline fails, then use this metadata JSON file to resume a failed pipeline from where it left
 # See details in /utils/resumer/README.md
-PIPELINE_METADATA=metadata.json
+PIPELINE_METADATA=metadata-$PBS_JOBID.json
 
 # limit number of concurrent tasks
 #  we recommend to use a number of replicates here
