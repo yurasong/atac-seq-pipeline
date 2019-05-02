@@ -1,0 +1,36 @@
+{
+    "atac.pipeline_type" : "atac",
+    "atac.genome_tsv" : "data/genome/hg38_local.tsv",
+
+    "atac.fastqs_rep1_R1" : [ "data/yura_test_data/fastq/HN12P2c_50000_R1.fastq" ],
+    "atac.fastqs_rep1_R2" : [ "data/yura_test_data/fastq/HN12P2c_50000_R2.fastq" ],
+
+    "atac.paired_end" : true,
+    "atac.multimapping" : 4,
+
+    "atac.auto_detect_adapter" : true,
+
+    "atac.smooth_win" : 73,
+    "atac.enable_idr" : true,
+    "atac.idr_thresh" : 0.05,
+
+    "atac.enable_xcor" : true,
+
+    "atac.title" : "HN12P2c (subsampled 50000 reads)",
+    "atac.description" : "ATAC-seq on PDX sample, derived from Head and Neck",
+
+    "atac.trim_adapter.cpu" : 2,
+    "atac.trim_adapter.mem_mb" : 6000,
+    "atac.trim_adapter.time_hr" : 6,
+    "atac.bowtie2_cpu" : 4,
+    "atac.bowtie2_mem_mb" : 10000,
+    "atac.bowtie2_time_hr" : 12,
+    "atac.filter_cpu" : 2,
+    "atac.filter_mem_mb" : 10000,
+    "atac.filter_time_hr" : 6,
+    "atac.macs2_mem_mb" : 8000,
+    "atac.macs2_time_hr" : 6,
+    "atac.ataqc_mem_mb" : 8000,
+    "atac.ataqc_mem_java_mb" : 7000,
+    "atac.ataqc_time_hr" : 6
+}
